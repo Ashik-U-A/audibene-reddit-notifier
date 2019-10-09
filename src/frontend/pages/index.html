@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script type="text/javascript" src="./scripts/index.js"></script>
+        <title>Reddit Notifier</title>
+    </head>
+    <body>
+        <div class="user-login">
+            <div class="set">
+                <label>Email : </label>
+                <input id="email" type="email" />
+            </div>
+            <div class="set">
+                <label>Username : </label>
+                <input id="username" type="text" />
+            </div>
+            <button onclick="api.createUserIfNew()">Login / Signup</button>
+        </div>
+    </body>
+</html>
