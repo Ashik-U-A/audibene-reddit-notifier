@@ -68,6 +68,30 @@ export class RedditService {
         }
     }
 
+    public static getTopPosts(url: string, count: number): Promise<any> {
+        this.requestAccessToken();
+        return new Promise((res, rej) => {
+            get(
+                url +
+                    (url[url.length - 1] === "/" ? "" : "/") +
+                    "top/.json?limit=" +
+                    count,
+                {
+                    headers: _headers
+                },
+                (error: any, response: any, body: any) => {
+                    if (!error && response.statusCode == 200) {
+                        res(JSON.parse(body));
+                        console.log(response.headers);
+                        console.log(response.trailers);
+                    } else {
+                        rej(error || response.statusCode);
+                    }
+                }
+            );
+        });
+    }
+
     private static requestAccessToken(): void {
         post(
             "https://www.reddit.com/api/v1/access_token",
