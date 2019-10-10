@@ -15,3 +15,7 @@ The Following Sections are completed:
 
 5. The addition of Mail Service (Responsible for sending mails to the users)
 6. The addition of Scheduler Service (Responsible for setting a timed event that orchestrates the workflow of the data fetch from Reddit servers and sending mails)
+
+7. The Addition of Mail Body Composing feature added.
+
+The said functionalities have been completed.

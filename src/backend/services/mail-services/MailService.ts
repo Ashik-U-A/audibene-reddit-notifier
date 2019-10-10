@@ -6,8 +6,9 @@ export class MailService {
         from: string;
         to: string;
         subject: string;
-        body: string;
+        html: string;
     }) {
+        console.log("Sending Mail to : " + message_details.to);
         mail.send(message_details);
     }
 }

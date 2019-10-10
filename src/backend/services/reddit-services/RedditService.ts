@@ -82,8 +82,6 @@ export class RedditService {
                 (error: any, response: any, body: any) => {
                     if (!error && response.statusCode == 200) {
                         res(JSON.parse(body));
-                        console.log(response.headers);
-                        console.log(response.trailers);
                     } else {
                         rej(error || response.statusCode);
                     }

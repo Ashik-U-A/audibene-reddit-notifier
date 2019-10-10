@@ -10,6 +10,7 @@ export class SchedulerService {
     ) {
         this.schedule_timer = setInterval(() => {
             let time = new Date();
+
             if (
                 time.getHours() === this.time.hours &&
                 time.getMinutes() === this.time.minutes
@@ -18,8 +19,12 @@ export class SchedulerService {
                     action();
                 });
             }
-        }, 30000);
+        }, 15000);
         SchedulerService.all_schedules.push(this);
+    }
+
+    public addAction(action: Function): void {
+        this.scheduled_actions.push(action);
     }
 
     public destroy() {
