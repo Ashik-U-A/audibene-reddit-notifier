@@ -72,6 +72,10 @@ module.exports = [
                     to: path.join(__dirname, "dist", "frontend")
                 },
                 {
+                    from: path.join(__dirname, "src", "frontend", "styles"),
+                    to: path.join(__dirname, "dist", "frontend", "styles")
+                },
+                {
                     from: path.join(__dirname, "src", "frontend", "libs"),
                     to: path.join(__dirname, "dist", "frontend", "libs")
                 }

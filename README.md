@@ -19,3 +19,5 @@ The Following Sections are completed:
 7. The Addition of Mail Body Composing feature added.
 
 The said functionalities have been completed.
+
+AND FINALLY, some UI / UX Improvements have been made.

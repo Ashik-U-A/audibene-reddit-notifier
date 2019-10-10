@@ -4,35 +4,46 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="./styles/main.css" />
         <script src="./scripts/config.js"></script>
         <title>User Configuration | Reddit Notifier</title>
     </head>
-    <body>
-        <h2>User Configuration</h2>
-        <h3 id="welcome">Hello,</h3>
-        <div class="container">
-            <label>Add the Subreddit Channel URL</label>
-            <input type="text" id="channelurl" />
-            <button class="primary" onclick="api.addChannelToList()">
-                Add
-            </button>
-        </div>
-        <div class="container">
-            <h4>The Channels that you will be notified for :</h4>
-            <ul id="channel-list"></ul>
-        </div>
-        <div class="container">
-            <input
-                type="checkbox"
-                id="subscribe"
-                onchange="api.setNewsletterSubscription()"
-            /><label> Get newsletter about subscribed channels</label>
-        </div>
-        <div class="container">
-            <button class="primary" onclick="api.saveNewConfiguration()">
-                Save Configuration
-            </button>
-            <button class="secondary">Cancel</button>
+    <body class="normal">
+        <div class="content">
+            <h2>User Configuration</h2>
+            <h3 id="welcome">Hello,</h3>
+            <div class="container">
+                <label
+                    >You can add your favourite Subreddit channels over here to
+                    get notified about it everyday</label
+                >
+                <input
+                    type="text"
+                    id="channelurl"
+                    placeholder="Add URL here. eg: https://www.reddit.com/r/funny"
+                />
+                <button class="primary" onclick="api.addChannelToList()">
+                    Add
+                </button>
+            </div>
+            <div class="container">
+                <h4>Marked Subreddit Channels</h4>
+                <ul id="channel-list" class="channel-list"></ul>
+            </div>
+
+            <div class="container far">
+                <div class="group">
+                    <input
+                        type="checkbox"
+                        id="subscribe"
+                        onchange="api.setNewsletterSubscription()"
+                    /><label> Get newsletter about subscribed channels</label>
+                </div>
+                <button class="primary" onclick="api.saveNewConfiguration()">
+                    Save Configuration
+                </button>
+                <button class="secondary">Cancel</button>
+            </div>
         </div>
     </body>
 </html>

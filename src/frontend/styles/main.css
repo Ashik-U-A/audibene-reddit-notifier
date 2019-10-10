@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: "border-box";
+    font-family: "Open Sans";
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ededed;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: #1976d2;
+    display: grid;
+    grid-template-columns: max-content auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+header .logo {
+    color: #fff;
+}
+
+header .logo h2 {
+    font-size: 1.4rem;
+    font-weight: 300;
+}
+
+header .logo h6 {
+    font-size: 0.9rem;
+    font-weight: 400;
+    text-align: right;
+}
+
+.user-login {
+    display: inline-block;
+    padding: 40px;
+    background: #fff;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    width: 30%;
+    border-radius: 10px;
+}
+.user-login .set {
+    padding: 10px 0;
+    display: block;
+}
+.user-login .set label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #666;
+    display: block;
+}
+.user-login .set input {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #bbb;
+    width: calc(100% - 20px);
+}
+
+.user-login button {
+    padding: 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+    background: #2196f3;
+    margin: 20px 0 0 0;
+}
+
+body.normal {
+    display: block;
+}
+
+.content {
+    margin: 0 15%;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
+}
+
+.content h2 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.content h3 {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.content .container {
+    padding: 10px 0;
+}
+
+.content .container label {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #333;
+}
+.content .container input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #bbb;
+    width: calc(100% - 20px);
+}
+
+button.primary {
+    padding: 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    color: #fff;
+    display: inline-block;
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.3);
+    background: #2196f3;
+    margin: 20px 0 0 0;
+}
+
+button.secondary {
+    padding: 20px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    color: #aaa;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    background: #fff;
+}
+
+.content h4 {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: #333;
+    margin-bottom: 20px;
+    margin-top: 30px;
+}
+
+.content .far {
+    padding: 40px 0 10px 0;
+}
+
+.content .group label {
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.content .channel-list {
+    list-style-type: none;
+}
+
+.content .channel-list li {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+}
+
+.content .channel-list li button {
+    padding: 10px;
+    border: none;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    color: #c2185b;
+    display: inline-block;
+    margin: 20px 0 0 0;
+    background: #fff;
+}
+
+.content .channel-list li label {
+    font-size: 1rem;
+    font-weight: 300;
+}
