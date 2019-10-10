@@ -10,12 +10,22 @@ export class UserMailScheduler {
         this._data[user] = undefined;
     }
 
-    public static schedule(user: string, channels: []) {
+    public static schedule(
+        user: string,
+        channels: [],
+        time: { hours: number; minutes: number; timezone_offset: number }
+    ) {
         if (this._data[user] !== undefined) {
             this._data[user].scheduler.destroy();
         }
+
+        let delay = time.timezone_offset - new Date().getTimezoneOffset();
+
         this._data[user] = {
-            scheduler: new SchedulerService({ hours: 8, minutes: 0 }),
+            scheduler: new SchedulerService({
+                hours: (time.hours + Math.floor(delay / 60)) % 24,
+                minutes: (time.minutes + (delay % 60)) % 60
+            }),
             action: () => {
                 let content = new MailContentGenerator(
                     user,

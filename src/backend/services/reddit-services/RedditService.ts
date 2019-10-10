@@ -12,6 +12,7 @@ export class RedditService {
         user: string;
         channels: [];
         subscribe: boolean;
+        time: { hours: number; minutes: number; offset_minutes: number };
     }> = [];
 
     public static getTrendingSubreddits(): Promise<any> {
@@ -21,14 +22,20 @@ export class RedditService {
 
     public static getDetails(
         email: string
-    ): { channels: []; subscribe: boolean } {
+    ): {
+        channels: [];
+        subscribe: boolean;
+        time: { hours: number; minutes: number; offset_minutes: number };
+    } {
         let ret = this.reddit_user_data.find(d => {
             return d.user === email;
         });
+
         if (ret) {
             return {
                 channels: ret.channels,
-                subscribe: ret.subscribe
+                subscribe: ret.subscribe,
+                time: ret.time
             };
         } else {
             return null;
@@ -39,7 +46,8 @@ export class RedditService {
         this.reddit_user_data.push({
             user: email,
             channels: [],
-            subscribe: false
+            subscribe: false,
+            time: { hours: 8, minutes: 0, offset_minutes: 0 }
         });
     }
 
@@ -47,6 +55,7 @@ export class RedditService {
         user: string;
         channels: [];
         subscribe: boolean;
+        time: { hours: number; minutes: number; offset_minutes: number };
     }): any {
         console.log(configuration);
         let new_conf = this.reddit_user_data.find(r => {
@@ -55,6 +64,7 @@ export class RedditService {
         if (new_conf) {
             new_conf.channels = configuration.channels;
             new_conf.subscribe = configuration.subscribe;
+            new_conf.time = configuration.time;
             console.log(this.reddit_user_data);
             return {
                 type: "INFO",

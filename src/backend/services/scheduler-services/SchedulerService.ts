@@ -8,6 +8,8 @@ export class SchedulerService {
             minutes: number;
         }
     ) {
+        console.log("New Schedule ");
+        console.log(time);
         this.schedule_timer = setInterval(() => {
             let time = new Date();
 

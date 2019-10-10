@@ -10,13 +10,18 @@ RedditRouter.get("/email=:email", (req, res) => {
     if (!req.body.newsletter) {
         UserMailScheduler.clearSchedule(req.body.user);
     } else {
-        UserMailScheduler.schedule(req.body.user, req.body.channels);
+        UserMailScheduler.schedule(
+            req.body.user,
+            req.body.channels,
+            req.body.time
+        );
     }
     res.send(
         RedditService.setConfigurationForUser({
             user: req.body.user,
             channels: req.body.channels,
-            subscribe: req.body.newsletter
+            subscribe: req.body.newsletter,
+            time: req.body.time
         })
     );
 });

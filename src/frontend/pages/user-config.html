@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <link rel="stylesheet" href="./styles/main.css" />
-        <script src="./scripts/config.js"></script>
         <title>User Configuration | Reddit Notifier</title>
     </head>
     <body class="normal">
@@ -33,6 +32,22 @@
 
             <div class="container far">
                 <div class="group">
+                    <label
+                        >Choose when you want to receive the Mail regarding the
+                        Channels you follow</label
+                    >
+                    <input
+                        type="time"
+                        class="time"
+                        id="time"
+                        onchange="api.getTime(this)"
+                    />
+                    <p>
+                        NOTE : You are on the
+                        <span id="timezone"></span> GMT Timezone
+                    </p>
+                </div>
+                <div class="group">
                     <input
                         type="checkbox"
                         id="subscribe"
@@ -45,5 +60,6 @@
                 <button class="secondary">Cancel</button>
             </div>
         </div>
+        <script src="./scripts/config.js"></script>
     </body>
 </html>
